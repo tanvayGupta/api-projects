@@ -1,1 +1,1 @@
-fetch("");
+const KEY = fetch("");
