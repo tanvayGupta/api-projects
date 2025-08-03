@@ -1,0 +1,61 @@
+1. 🕵️‍♂️ Random User Generator
+What it does: Fetch a random user profile and display their name, email, picture, etc.
+
+🔗 API: https://randomuser.me
+
+📚 Skills: fetch, DOM manipulation, JSON parsing
+
+fetch('https://randomuser.me/api/')
+  .then(res => res.json())
+  .then(data => {
+    const user = data.results[0];
+    console.log(user.name.first);
+  });
+2. 🌤️ Weather App
+What it does: Show the current weather of a city the user types.
+
+🔗 API: OpenWeatherMap (requires free API key)
+
+📚 Skills: API key usage, form handling, error handling
+
+3. 📸 Dog Image Generator
+What it does: Show a new dog picture every time the button is clicked.
+
+🔗 API: https://dog.ceo/api/breeds/image/random
+
+📚 Skills: Working with images, buttons, fetch
+
+4. 📚 Dictionary App
+What it does: User enters a word, you fetch its meaning.
+
+🔗 API: https://api.dictionaryapi.dev/
+
+📚 Skills: Handling input, response parsing, displaying errors if word not found
+
+5. 😂 Joke Generator
+What it does: Show a random joke on button click.
+
+🔗 API: https://official-joke-api.appspot.com/random_joke
+
+📚 Skills: Simple API call and DOM update
+
+6. 📰 News Headlines Viewer
+What it does: Fetch and show top headlines.
+
+🔗 API: https://newsapi.org (requires free API key)
+
+📚 Skills: Loops to display multiple items, understanding API parameters
+
+7. 📦 Pokemon Info App
+What it does: User types Pokémon name → shows image, type, stats.
+
+🔗 API: https://pokeapi.co
+
+📚 Skills: Dealing with nested JSON, user input
+
+8. 🎬 Movie Search App
+What it does: Search for movies by title.
+
+🔗 API: OMDb API (free API key needed)
+
+📚 Skills: Input handling, API parameters, conditionally rendering data

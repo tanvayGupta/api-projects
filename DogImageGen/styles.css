@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  padding: 0.6em 1.2em;
+  background-color: #3498db;
+  color: #fff;
+  border: 5vh white;
+  border-radius: 0.3em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #217dbb;
+}
+
+img {
+  max-width: 50vh;
+  max-height: 50vh;
+  object-fit: contain;
+  padding: 25px;
+  background-color: aquamarine;
+  border: white 25px solid;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
