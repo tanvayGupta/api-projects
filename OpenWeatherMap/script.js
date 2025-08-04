@@ -11,13 +11,15 @@ const apiKey = process.env.API_KEY;
 const port = 3000;
 
 const app = express();
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use((req, res, next) => {
-  res.locals.weatherLon = "Unknown"; // 👈 globally available in all views
+  res.locals.weatherDesc = "______";
+  res.locals.city = "______";
   next();
 });
 
@@ -27,16 +29,17 @@ app.get("/", (req, res) => {
 
 app.post("/getWeather", async (req, res) => {
   try {
-    const api_url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
-
+    const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${req.body.city}&appid=${apiKey}&units=metric`;
     const response = await fetch(api_url);
     const weatherData = await response.json();
-    const weatherLon = weatherData.weather[0].description;
+    const weatherDesc = weatherData.weather[0].description;
 
-    res.render("index", { weatherLon: weatherLon });
+    res.render("index", { weatherDesc, city: req.body.city });
   } catch (error) {
     // console.error("Error fetching weather data:", error);
-    res.render("index", { weatherLon: "Error fetching data" });
+    res.render("index", {
+      weatherDesc: "Error fetching data",
+    });
   }
 });
 

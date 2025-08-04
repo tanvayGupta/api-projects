@@ -7,9 +7,10 @@
     <title>Weather</title>
   </head>
   <body>
-    <h1 id="Weather">The Weather in London is <%= weatherLon %></h1>
+    <h1 id="Weather">The Weather in <%= city %> is <%= weatherDesc %></h1>
     <form method="POST" action="/getWeather">
-      <button type="submit">Get Weather For London</button>
+      <input name="city" placeholder="Enter city name" />
+      <button type="submit">Get Weather</button>
     </form>
     <script src="script.js"></script>
   </body>
