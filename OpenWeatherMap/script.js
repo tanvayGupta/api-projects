@@ -43,11 +43,6 @@ app.post("/getWeather", async (req, res) => {
   }
 });
 
-// app.post("/getWeather", (req, res) => {
-//   console.log("POST request received!");
-//   res.send("Weather route hit");
-// });
-
 app.listen(port, () => {
   console.log("Hey, I'm listening!");
 });

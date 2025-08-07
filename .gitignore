@@ -1,1 +1,8 @@
-/OpenWeatherMap/API.txt
+/OpenWeatherMap/.env
+*.env
+*.json
+node_modules/
+
+
+package-lock.json
+package.json
